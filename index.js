@@ -137,17 +137,23 @@ function playGame(event) {
         hideAddBox.style.display = 'none';  // Hide Play Again button after clicking
 
         // Keep the scores intact when resetting the game UI
-        user.textContent = localStorage.getItem('usersScore');
-        comp.textContent = localStorage.getItem('compsScore');
+        comp.textContent = isNaN(parseInt(localStorage.getItem('compsScore'))) ? 0 : localStorage.getItem('compsScore');
+        user.textContent = isNaN(parseInt(localStorage.getItem('usersScore'))) ? 0 : localStorage.getItem('usersScore');
     });
 
     // Update the scoreboard based on the winner
     if (winner === "YOU WIN") {
+        if (isNaN(parseInt(user.textContent)) || user.textContent === "") {
+            user.textContent = 0;
+        }
         user.textContent = parseInt(user.textContent) + 1;
         localStorage.setItem('usersScore', user.textContent);  // Store updated score
         toggleAnimation(firstPulse);
         hideBox.classList.remove('hidden');  // Show Next button
     } else if (winner === "YOU LOST") {
+        if (isNaN(parseInt(comp.textContent)) || comp.textContent === "") {
+            comp.textContent = 0;
+        }
         comp.textContent = parseInt(comp.textContent) + 1;
         localStorage.setItem('compsScore', comp.textContent);  // Store updated score
         toggleAnimation(secondPulse);
