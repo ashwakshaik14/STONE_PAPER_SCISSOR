@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+
+
+<body>
+    <div class="container">
+        <div id="top">
+            <h1>
+                ROCK<br>
+                PAPER<br>
+                SCISSORS
+            </h1>
+            <div class="scoreboards">
+                <div class="update">
+                    <p>COMPUTER<br>SCORE</p>
+                    <p id="com">0</p>
+                </div>
+                <div class="update">
+                    <p>YOUR<br>SCORE</p>
+                    <p id="you">0</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="game">
+            <div class="triangle1"></div>
+            <div class="triangle"></div>
+            <button id="stone" class='number' style="border:1rem solid #0074B6;"><img src="stone.png"
+                    width="70"></button>
+            <button id="paper" class='number' style="border: 1rem solid #FFA943;"><img src="paper.png"
+                    width="70"></button>
+            <button id="scissors" class='number' style="border: 1rem solid #BD00FF;"><img src="scissor.png"
+                    width="40"></button>
+        </div>
+
+        <div class="resbox">
+            <div class="resultgen">
+                <div class="choice">
+                    <div class="rc" id="myChoice">YOU PICKED</div>
+                    <div class="rc" id="compchoice">PC PICKED</div>
+                </div>
+                <div class="circleanimate">
+                    <div class="pulse onepulse">
+                        <div class="main one"></div>
+                        <span id="firstspan" style="--i: 1;"></span>
+                        <span id="firstspan" style="--i: 2;"></span>
+                        <span id="firstspan" style="--i: 3;"></span>
+                    </div>
+                    <div class="addBox hid">
+                        <div id="status"></div>
+                        <div id="status1">AGAINST PC</div>
+                        <div>
+                            <button id="addBox">Play Again</button>
+                        </div>
+                        <div class="nextbtn hidden">
+                            <a href="win.html">
+                                <button>NEXT</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="pulse twopulse">
+                        <div class="main two"></div>
+                        <span id="secondspan" style="--i: 1;"></span>
+                        <span id="secondspan" style="--i: 2;"></span>
+                        <span id="secondspan" style="--i: 3;"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="hide">
+            <div id="rules" style="display: none;">
+                <button id="exit" style="cursor: pointer;" onclick="hideRules()">X</button>
+                <h1>
+                    <center>Game Rules</center>
+                </h1>
+                <div id="rul">
+                    <ul>
+                        <li>
+                            Rock beats scissors, scissors beat paper, and paper beats rock.
+                        </li>
+                        <br>
+                        <li>
+                            Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock,
+                            paper,
+                            scissors.”
+                        </li>
+                        <br>
+                        <li>
+                            Use rock, paper, scissors to settle minor decisions or simply play to pass the time
+                        </li>
+                        <br>
+                        <li>
+                            If both players lay down the same hand, each player lays down another hand.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="rulebtn">
+                <button onclick="showRules()" ondblclick="hideRules()">RULES</button>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+
+
+</body>
+
+</html>
